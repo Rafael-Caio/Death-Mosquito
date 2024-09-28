@@ -1,70 +1,104 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="css/estilo.css">
-        <title>Tela inicial</title>
-    </head>
-    <script>
-        function StartGame(){
-            var nivel = document.getElementById("nivel").value
-            if(nivel === ""){
-                alert("Selecione um nível de jogo")
-                return false
-            }
-            //a interrogação é usada para separar os parametros da pagina que esta sendo direcionada
-            window.location.href = "game.html?" + nivel
-        }   
-    </script>
-    <body>
-        <audio autoplay>
-            <source src="sounds/musica_inicio.mp3" type="audio/mp3">
-        </audio>
-        <audio src="sounds/som_select.mp3" id="selecao"></audio>
-        <section class="container">
-            <!-- nome tela inicial -->
-            <div class="row">
-                <div class="col">
-                    <div class="d-flex justify-content-center">
-                        <img src="imagens/game3.png">
-                    </div>
-                </div>
-            </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="css/estilo.css" />
+    <title>Tela inicial</title>
+  </head>
+  <script>
+    window.addEventListener("click", function () {
+      var music = document.getElementById("background-music");
+      music.muted = false; // Desativa o mute
+      music.play(); // Toca a música
+    });
 
-            <div class="row">
-                <div class="col">
-                    <div class="d-flex justify-content-center">
-                        <div class="mb-2">
-                            <select class="form-control bg-dark text-white" id="nivel" onclick="ativaSelect()">
-                                <option value = "">  Selecione o Nível  </option>
-                                <option value = "normal" class="fw-bold" onclick="ativaSelect()">Normal</option>
-                                <option value = "hard" class="fw-bold" onclick="ativaSelect()">Hard</option>
-                                <option value = "veryhard" class="fw-bold" onclick="ativaSelect()">Very Hard</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+    function StartGame() {
+      var nivel = document.getElementById("nivel").value;
+      if (nivel === "") {
+        alert("Selecione um nível de jogo");
+        return false;
+      }
+      //a interrogação é usada para separar os parametros da pagina que esta sendo direcionada
+      window.location.href = "game.html?" + nivel;
+    }
+  </script>
+  <body>
+    <audio id="background-music" loop>
+      <source src="sounds/musica_inicio.mp3" type="audio/mp3" />
+    </audio>
+    <audio src="sounds/som_select.mp3" id="selecao"></audio>
+    <section class="container">
+      <!-- Nome tela inicial -->
+      <div class="row">
+        <div class="col">
+          <div class="d-flex justify-content-center">
+            <img
+              src="imagens/game3.png"
+              class="img-fluid"
+              alt="Death Mosquito"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="d-flex justify-content-center">
+            <div class="mb-2">
+              <select
+                class="form-control bg-dark text-white"
+                id="nivel"
+                onclick="ativaSelect()"
+              >
+                <option value="">Selecione o Nível</option>
+                <option value="normal" class="fw-bold" onclick="ativaSelect()">
+                  Normal
+                </option>
+                <option value="hard" class="fw-bold" onclick="ativaSelect()">
+                  Hard
+                </option>
+                <option
+                  value="veryhard"
+                  class="fw-bold"
+                  onclick="ativaSelect()"
+                >
+                  Very Hard
+                </option>
+              </select>
             </div>
-            <!-- botão iniciar ga,e-->
-            <div class="row">
-                <div class="col">
-                    <div class="d-flex justify-content-center">
-                        <button class="btn btn-danger btn-lg border border-white text-white" onclick="StartGame()">
-                            <b>Iniciar Game</b>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <script>
-            function ativaSelect(){
-                var selecao = document.getElementById("selecao")
-                selecao.play()
-            }
-            
-        </script>
-    </body>
+          </div>
+        </div>
+      </div>
+      <!-- botão iniciar ga,e-->
+      <div class="row">
+        <div class="col">
+          <div class="d-flex justify-content-center">
+            <button
+              class="btn btn-danger btn-lg border border-white text-white"
+              onclick="StartGame()"
+            >
+              <b>Iniciar Game</b>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      function ativaSelect() {
+        var selecao = document.getElementById("selecao");
+        selecao.play();
+      }
+    </script>
+  </body>
 </html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Death Aedes</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="css/estilo.css">
+        <script src="js/main.js"></script>
+    </head>
+    <body onresize="ajustarTela()">
+        <audio autoplay>
+            <source src="sounds/musica_fundo.mp3" type="audio/mp3">
+        </audio>
+        <audio src="sounds/som_mosquito.mp3" id="sommosquito" loop></audio>
+        <!--<img src="imagens/mosquito.png" class="mosquito1">-->
+        <section class="painel">
+            <div class="vida">
+                <img id="c1" src="imagens/coracao_cheio.png">
+                <img id="c2" src="imagens/coracao_cheio.png">
+                <img id="c3" src="imagens/coracao_cheio.png">
+
+            </div>
+            <div class="cronometro">Time to Survive: <span id="cronometro"></span></div>
+            
+        </section>
+    
+        
+        
+        <!--A função teve que ser chamada apos a img por causa da precedencia,
+        do contrario a função seria executada antes da criação do body onde esta 
+        o img e daria erro!-->
+        <script>
+            document.getElementById("cronometro").innerHTML = tempo
+            var geraMosquito = setInterval(function(){
+                randomPosition()
+                var sommosqt = document.getElementById("sommosquito")
+                sommosqt.play()
+            }, tempoCriaMosquito)
+        </script>
+    </body>
+
+</html>

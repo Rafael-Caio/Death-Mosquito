@@ -1,0 +1,72 @@
+html {
+    cursor: url(../imagens/mata_mosca.png) 30 30, auto;
+}
+
+@keyframes cursor{
+    
+}
+body {
+    background-image: url(../imagens/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.mosquito1 {
+    width: 50px;
+    height: 50px;
+}
+.mosquito2 {
+    width: 70px;
+    height: 70px;
+}
+.mosquito3 {
+    width: 90px;
+    height: 90px;
+}
+
+.mancha1 {
+    width: 50px;
+    height: 50px;
+}
+.mancha2 {
+    width: 70px;
+    height: 70px;
+}
+.mancha3 {
+    width: 90px;
+    height: 90px;
+}
+
+
+.ladoA {
+    transform: scaleX(1);/*posição atual*/
+}
+
+.ladoB {
+    transform: scaleX(-1);
+}
+
+
+/*Pinel de pontuação*/
+
+section.painel {
+    position: absolute;
+    width: 190px;
+    padding: 10px;
+    bottom: 0px;
+    left: 0px;
+    border-top: 1px solid #fff;
+    border-radius: 0 10px 10px 0;
+    background-color: #fff;
+    opacity: 0.7;
+    
+}
+
+.vidas {
+    float:left;
+}
+.cronometro {
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+}
